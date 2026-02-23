@@ -84,41 +84,42 @@ The architecture is designed for **low-friction adoption** in small teams: one r
 
 ```mermaid
 flowchart TD
-  A[Developer PR/MR] --> B[CI Orchestrator: guardrail-runner]
-  B --> C{Detect stack & files}
-  C -->|Node/Python/Java/.NET| D[Build job]
-  C --> E[Policy & Runtime checks]
+  A[Developer PR MR] --> B[CI orchestrator guardrail runner]
+  B --> C[Detect stack and files]
+
+  C --> D[Build job]
+  C --> E[Policy runtime checks]
   C --> F[Secrets scan]
   C --> G[SAST]
   C --> H[SBOM generation]
-  H --> I[SCA from lockfiles/SBOM]
-  C --> J[IaC & container hardening scans]
+  H --> I[SCA from lockfiles and SBOM]
+  C --> J[IaC and container hardening scans]
 
   D --> K[Artifact outputs]
-  H --> K
-  I --> K
+  E --> K
   F --> K
   G --> K
+  H --> K
+  I --> K
   J --> K
-  E --> K
 
-  K --> L[(Artifact store)]
-  L --> M[Normalizer + Deduplicator]
-  M --> N[Unified JSON/YAML + SARIF]
-  N --> O[Human-readable Findings Report (Markdown/HTML)]
-  O --> P{Release gate (requires static + DAST results)}
-  O --> S[Deploy to staging/preview]
-  S --> T[DAST runner (ZAP baseline/API/full)]
-  T --> L
-  T --> P
+  K --> L[Artifact store]
+  L --> M[Normalizer and deduplicator]
+  M --> N[Unified JSON YAML SARIF]
+  N --> O[Human readable findings report]
 
-  P -->|pass| Q[Release/Deploy]
-  P -->|fail| R[Block + Create/Update Issues]
+  O --> P[Deploy to staging or preview]
+  P --> Q[DAST runner]
+  Q --> L
 
-  Q --> U[SLSA provenance / attestations]
+  O --> R[Release gate]
+  Q --> R
+  R --> S[Release and deploy]
+  R --> T[Block and create or update issues]
+
+  S --> U[SLSA provenance and attestations]
   U --> L
-
-  R --> V[Vuln mgmt platform optional: DefectDojo]
+  T --> V[Vulnerability management platform optional DefectDojo]
 ```
 
 Design notes:
