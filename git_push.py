@@ -16,6 +16,7 @@ ENV_FILE = Path(".env")
 TARGET_REPO = "https://github.com/GeorgeSavlovschi/SecurityConsultingProject.git"
 DEFAULT_BRANCH = "main"
 DEFAULT_COMMIT_MESSAGE = "chore: update SecurityConsultingProject files"
+LOCAL_GLOBAL_GITCONFIG = Path(".gitconfig-local").resolve()
 
 
 def run(
@@ -35,6 +36,8 @@ def run(
 
 def ensure_safe_directory() -> None:
     """Allow git operations in this working directory in sandboxed environments."""
+    # Point git's "global" config to a writable file inside this repository.
+    os.environ["GIT_CONFIG_GLOBAL"] = str(LOCAL_GLOBAL_GITCONFIG)
     run(
         [
             "git",
