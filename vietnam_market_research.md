@@ -3,6 +3,8 @@
 **Last updated:** 2026-03-07
 **Purpose:** Automated security guardrail assessment platform — market entry research for small Vietnamese software firms
 
+**Related documents:** [certifications.md](certifications.md) (certification guide for consultants/clients) | [security_agent_plan.md](security_agent_plan.md) (technical tool plan)
+
 ---
 
 ## 1. Market Overview
@@ -37,7 +39,7 @@ Vietnam is outpacing the APAC average due to rapid digital adoption against a lo
 
 1. **Regulatory pressure**: Cascade of new laws (Cybersecurity Law 2025, Decree 356/2025, PDPL 2025) forcing compliance investment
 2. **Digital transformation acceleration**: Government National Digital Transformation Program targeting 100% of state services online by 2025; cloud migration among SMEs accelerating
-3. **Attack volume surge**: 659,000 cyberattacks recorded in 2024 (60% increase YoY); 552,000 attacks recorded in full-year 2025 (down 19.4% in volume but with substantially higher per-incident financial damage and a sharp Q3 2025 resurgence — attackers shifted to targeted, AI-assisted approaches)
+3. **Attack volume surge**: 659,000 cyberattacks recorded in 2024; 552,000 attacks recorded in full-year 2025 (down 19.4% in volume but with substantially higher per-incident financial damage and a sharp Q3 2025 resurgence — attackers shifted to targeted, AI-assisted approaches)
 4. **Workforce shortage**: ~700,000 cybersecurity professional shortfall creates demand for automated tooling and outsourced services
 5. **International business integration**: Growing outsourcing sector must meet international client security expectations
 6. **FDI inflows**: Foreign direct investment in Vietnam's tech sector surpassed USD 5B in 2025; foreign firms require local partners to meet compliance obligations
@@ -134,7 +136,7 @@ Data from the National Cyber Security Association (NCSA) 2025 survey of 5,300+ o
 
 | Metric | Value |
 |--------|-------|
-| Organizations with no dedicated cybersecurity staff | 47.72% |
+| Organizations with insufficient cybersecurity personnel | 47.72% |
 | Organizations without any security standards implemented | 27.80% |
 | Organizations without centralized malware management | >50% |
 | Organizations with no firewalls or access control | 9.38% |
@@ -232,7 +234,7 @@ This represents the primary competitive "alternative" — not a competing firm, 
 ### 5.1 Reported Incidents and Breaches
 
 **2024 Statistics:**
-- **659,000 cyberattacks** recorded in 2024 — a 60% increase year-over-year
+- **659,000 cyberattacks** recorded in 2024
 - **14.5 million accounts** compromised due to data breaches in 2024, representing **12% of global breaches** (disproportionately high for a mid-sized economy)
 - **155,600 computers** hit by ransomware attacks in 2024
 - **14.59%** of surveyed organizations hit by ransomware in 2024
@@ -257,7 +259,7 @@ The regulatory stack now in effect or imminent:
 | Regulation | Effective | Key Obligation |
 |-----------|-----------|----------------|
 | Cybersecurity Law 2018 | Jan 2019 | Data localization, CII security |
-| Decree 53/2022 | 2022 | Data localization implementation |
+| Decree 53/2022 | Oct 2022 | Data localization implementation |
 | PDPL / Decree 356/2025 | Jan 2026 | Personal data protection, DPO requirement |
 | Cybersecurity Law 2025 | Jul 2026 | Consolidated obligations, expanded CII scope |
 

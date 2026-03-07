@@ -2,6 +2,8 @@
 
 ## Executive summary
 
+**Related documents:** [vietnam_market_research.md](vietnam_market_research.md) (market research and competitive gaps this tool addresses) | [certifications.md](certifications.md) (consultant certification guide)
+
 This plan describes how to build an automated, repeatable “guardrail assessment” toolchain that converts your A–H guardrails into CI/CD-executable tests across four assessment categories: **Runtime & Framework**, **Third‑Party Dependencies & Supply Chain**, **Secure Coding, Configuration & Secrets**, and **Version Control/Deployment, Vulnerability Management & Security Testing**. The output is a set of **standardized artifacts** (SBOMs, vulnerability findings, SAST/DAST results, provenance/attestations, and a human-readable report mapped to ASVS/SSDF/OWASP Top 10) that you can deliver consistently to developer teams as a consultant.
 
 The core design is an **orchestrator + adapters** model:
@@ -26,7 +28,7 @@ Everything below prioritizes **free and open-source** tools; any paid options ar
 **Assumptions (explicit).**
 - The pipeline has outbound network access to fetch vulnerability databases/registries (OSV, NVD mirrors, etc.) and container base images.
 - DAST runs only against **staging/non-production** endpoints (or ephemeral previews). You maintain an allowlist of approved targets and require explicit opt-in for active scans. (ZAP “baseline” is designed to be non-attack/passive-focused; “full/api” scans are active.)
-- No single tech stack is assumed; the tool supports detection and conditional execution for **Node.js, Python, Java, .NET** based on repository signals (lockfiles, manifests, Dockerfile, CI variables).
+- No single tech stack is assumed; the tool supports detection and conditional execution for **Node.js, Python, Java, .NET** based on repository signals (lockfiles, manifests, Dockerfile, CI variables). **PHP** is common in the Vietnamese market and should be added as a supported stack in the multi-runtime hardening phase (Composer lockfile detection, PHP-specific Semgrep rulesets, and SBOM support via Syft).
 
 ---
 
@@ -736,6 +738,11 @@ Use this structure in `report.md` so it reads like an assessment deliverable:
 - ASVS mapping (reference)
 - NIST SSDF mapping (reference)
 
+## Vietnamese regulatory compliance mapping
+- PDPL 2025 / Decree 356 obligations addressed by findings
+- Cybersecurity Law 2025 (effective July 2026) relevant controls
+- Decree 53/2022 data localization implications (if applicable)
+
 ## Appendix
 - Tool versions
 - Coverage notes (what ran / what did not run)
@@ -848,7 +855,7 @@ Practical snippet for clients:
 
 ### Vietnam-specific compliance notes and data-handling guidance
 
-**Decree 356 (personal data protection).**
+**PDPL 2025 and Decree 356 (personal data protection).**
 - Decree **356/2025/ND-CP** took effect **January 1, 2026** and replaced Decree **13/2023/ND-CP** from the same date (per English translations/summaries).
 - Practical implication for your tooling: treat scan outputs (DAST captures, logs, screenshots) as potentially containing **personal data** if they include user identifiers, emails, session tokens, or production-like datasets. Keep reports “PII-minimal by default.”
 

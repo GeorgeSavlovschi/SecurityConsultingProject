@@ -165,7 +165,19 @@
 
 ---
 
-## 11. Pending Tasks
+## 11. Custom Skills
+
+Located in `skills/` directory. Invoke via `/skill-name`:
+
+| Skill | Trigger | Purpose |
+|-------|---------|---------|
+| `doc-coauthoring` | Writing docs, proposals, specs, RFCs | Structured 3-stage workflow: Context Gathering → Refinement & Structure → Reader Testing |
+| `mcp-builder` | Building MCP servers for LLM integrations | Guide for creating MCP servers (Python FastMCP or Node/TS SDK) with research, planning, implementation, and eval phases |
+| `skill-creator` | Creating, editing, or benchmarking skills | Create new skills, run evals, optimize descriptions, iterate with variance analysis |
+
+---
+
+## 12. Pending Tasks
 
 None currently.
 

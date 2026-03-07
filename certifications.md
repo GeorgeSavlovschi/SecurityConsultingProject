@@ -203,7 +203,7 @@ These certifications require candidates to demonstrate hands-on skills in simula
 
 **Type**: 100% hands-on lab exam
 
-**Cost**: ~$30–$49 USD (TCM Security's most affordable certification; check certifications.tcm-sec.com for current pricing)
+**Cost**: ~$249 USD (includes 12 months of access to the Practical Ethical Hacking course; 20% discount for students, military, and first responders; check certifications.tcm-sec.com for current pricing)
 
 **Format**: Candidates are given 48 hours to compromise a small Active Directory lab environment and 24 additional hours to write a brief report. No multiple-choice questions, no flags. Pass/fail is determined by the ability to compromise target machines and document the methodology.
 
@@ -309,7 +309,7 @@ These certifications require candidates to demonstrate hands-on skills in simula
 | GIAC GSEC | GIAC/SANS | 2 | MCQ + CyberLive labs | ~$949 (exam only) | Partial (CyberLive) | High (enterprise/gov) | Enterprise security, gov contracting |
 | CompTIA CySA+ | CompTIA | 2 | Multiple-choice + PBQ | ~$392 | Partial | High | SOC analyst, blue team |
 | eJPT | INE Security | 3 | 100% practical lab | ~$200 | Yes | Medium-High (technical community) | Penetration testing |
-| PJPT | TCM Security | 3 | 100% practical lab | ~$30–$49 | Yes | Medium (growing) | Penetration testing (entry) |
+| PJPT | TCM Security | 3 | 100% practical lab | ~$249 | Yes | Medium (growing) | Penetration testing (entry) |
 | PNPT | TCM Security | 3 | 100% practical + report | ~$499 | Yes | Medium-High (growing) | Penetration testing consulting |
 | eCPPT | INE Security | 3 | 100% practical lab | ~$400–$600 (bundle) | Yes | Medium-High (technical community) | Penetration testing (intermediate) |
 | BTL1 | Security Blue Team | 3 | 100% practical lab | ~$540 | Yes | Medium (blue team niche) | SOC analyst, incident response |
@@ -356,7 +356,7 @@ At this point, choose a focus: offensive (penetration testing / red team) or def
 - Purchase and complete TCM Security's "Practical Ethical Hacking" course (~$30 on sale)
 - Practice on HackTheBox (Starting Point machines — free)
 - Attempt and pass the **eJPT** exam (~$200) — validates practical penetration testing basics
-- Optionally, attempt the **PJPT** (~$30–$49) for Active Directory practice
+- Optionally, attempt the **PJPT** (~$249) for Active Directory practice
 
 **Milestone**: eJPT certified, active HackTheBox or TryHackMe profile with completed machines
 
@@ -407,6 +407,26 @@ At this point, choose a focus: offensive (penetration testing / red team) or def
 | 4–6 | eJPT + PJPT, HackTheBox practice | BTL1 or CySA+, Blue Team Labs |
 | 6–9 | PNPT + optional eCPPT, advanced HackTheBox | CEH (if required), SIEM home lab |
 | 9–12 | OSCP preparation / attempt | Internship / junior SOC role applications |
+
+---
+
+---
+
+## Non-Exam Credentials Relevant to the Vietnam Market
+
+The following are not traditional exam-based certifications but carry significant weight in the Vietnamese cybersecurity market and should be understood alongside personal certifications:
+
+- **ISO/IEC 27001:2022** (organizational): The most widely recognized information security management system standard. Vietnamese government procurement teams, international outsourcing clients, and regulated-sector buyers frequently require ISO 27001 certification from vendors. This is an organizational certification (not personal), but consultants who understand the ISO 27001 gap analysis and audit process are highly valued. The 2022 revision is now the current standard — firms still on the 2013 version risk losing certification validity after the October 2025 transition deadline.
+- **OWASP membership / contributor status**: OWASP is well-known among Vietnamese developers. Active OWASP contribution (published tools, rule sets, or community involvement) signals technical credibility in developer-led buying decisions.
+- **VNCERT/CC endorsement**: Vietnam Computer Emergency Response Team approval or partnership carries government-adjacent credibility, particularly important for firms serving regulated sectors or public-sector clients.
+- **Sao Khue award**: Vietnam's annual tech excellence award (organized by VINASA). Winning or being nominated signals domestic legitimacy to Vietnamese enterprise buyers who may not recognize international certification bodies. CyStack won Sao Khue 2025 for cybersecurity products.
+
+---
+
+## Related Documents
+
+- **[vietnam_market_research.md](vietnam_market_research.md)**: Vietnamese cybersecurity market analysis, competitive landscape, and marketing strategy — provides context for why specific certifications matter in this market
+- **[security_agent_plan.md](security_agent_plan.md)**: Technical plan for the automated guardrail assessment tool — the consulting platform these certifications support
 
 ---
 
