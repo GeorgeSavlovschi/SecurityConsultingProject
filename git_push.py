@@ -15,7 +15,7 @@ from urllib.parse import quote
 ENV_FILE = Path(".env")
 TARGET_REPO = "https://github.com/GeorgeSavlovschi/SecurityConsultingProject.git"
 DEFAULT_BRANCH = "main"
-DEFAULT_COMMIT_MESSAGE = "chore: update SecurityConsultingProject files"
+DEFAULT_COMMIT_MESSAGE = "updated documentation files to include a market analysis section a certification section"
 LOCAL_GLOBAL_GITCONFIG = Path(".gitconfig-local").resolve()
 
 

@@ -1,6 +1,6 @@
-# Security Consulting Project - Codex Context
+# Security Consulting Project - Claude Context
 
-## 0. Codex usage
+## 0. Claude usage
 
 ### 0.1 Workflow Orchestration
 
@@ -168,3 +168,4 @@
 ## 11. Pending Tasks
 
 None currently.
+
