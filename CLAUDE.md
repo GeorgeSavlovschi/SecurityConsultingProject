@@ -167,7 +167,7 @@
 
 ## 11. Custom Skills
 
-Located in `skills/` directory. Invoke via `/skill-name`:
+Located in `.claude/skills/` directory. Invoke via `/skill-name`:
 
 | Skill | Trigger | Purpose |
 |-------|---------|---------|
