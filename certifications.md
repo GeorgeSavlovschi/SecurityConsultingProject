@@ -18,7 +18,7 @@ These certifications assume no prior IT or security experience. They are suitabl
 
 **Cost**: Free exam (via ISC2's "One Million Certified in Cybersecurity" initiative, still active as of 2025); $50/year Annual Maintenance Fee after passing. Standard retake cost is $199 if the free attempt is failed.
 
-**Format**: Online proctored multiple-choice exam. No time limit published. Self-paced free training is included through ISC2's Candidate program.
+**Format**: Online proctored exam — 100 multiple-choice questions, 2 hours. Self-paced free training is included through ISC2's Candidate program.
 
 **Why it matters**: ISC2 is one of the most respected certification bodies globally, known for CISSP. The CC is their entry-level credential, designed to validate foundational security concepts. ISC2 has an active Vietnam chapter and participates in regional conferences such as CyberSecVietnam. The CC is a credible first step for resume differentiation in markets where employer recognition of ISC2 carries weight.
 
@@ -27,7 +27,7 @@ These certifications assume no prior IT or security experience. They are suitabl
 **Study resources**:
 - [ISC2 Official Free CC Self-Paced Course](https://www.isc2.org/landing/1mcc) — the full official course is free as part of the initiative
 - [ISC2 Candidate Program](https://www.isc2.org/candidate) — free membership tier with study access
-- TryHackMe "Pre-Security" and "SOC Level 1" learning paths (free tier available at tryhackme.com)
+- TryHackMe "Pre-Security" and "SOC Level 1" learning paths (free tier available at tryhackme.com; note that TryHackMe's free tier has limitations — some rooms and learning paths require a premium subscription)
 
 ---
 
@@ -39,7 +39,7 @@ These certifications assume no prior IT or security experience. They are suitabl
 
 **Format**: Self-paced video modules, quizzes, and hands-on labs via Coursera. No formal proctored exam. Completion earns a shareable certificate and Credly badge.
 
-**Why it matters**: Google backs this certificate and over 150 employers — including Deloitte, Mandiant (Google Cloud), and American Express — are listed as hiring partners. 75% of US graduates report positive career outcomes within six months. Internationally, recognition is growing but uneven; this certificate is best understood as a structured learning path and resume entry-point rather than an industry-standard qualification. It does not yet appear in job descriptions with the frequency of CompTIA or ISC2 credentials.
+**Why it matters**: Google backs this certificate and over 150 employers — including Deloitte, Mandiant (Google Cloud), and American Express — are listed as hiring partners. 75% of US graduates report positive career outcomes within six months (Google-reported statistic, likely based on self-reported survey data). Internationally, recognition is growing but uneven; this certificate is best understood as a structured learning path and resume entry-point rather than an industry-standard qualification. It does not yet appear in job descriptions with the frequency of CompTIA or ISC2 credentials.
 
 **Best for**: Complete beginners who learn best through structured, video-based instruction and want an affordable, self-paced introduction before pursuing a formally recognized exam-based certification.
 
@@ -63,7 +63,7 @@ These certifications assume no prior IT or security experience. They are suitabl
 **Best for**: Beginners entering IT for the first time who intend to move into cybersecurity but need foundational IT knowledge first. Not necessary if the candidate already has 1–2 years of IT work experience.
 
 **Study resources**:
-- [Professor Messer's Free CompTIA A+ Course](https://www.professormesser.com/free-a-plus-training/220-1101/220-1101-video/220-1101-training-course/) — free, comprehensive video series
+- [Professor Messer's Free CompTIA A+ Course](https://www.professormesser.com/free-a-plus-training/220-1201/220-1201-video/220-1201-training-course/) — free, comprehensive video series (current exam codes: 220-1201 Core 1 and 220-1202 Core 2, effective October 2025; prior codes 220-1101/1102 retired October 20, 2025 — ensure study materials target the current version)
 - [Professor Messer's Practice Exams](https://www.professormesser.com/practice-exams/) — affordable paid practice tests
 - Mike Meyers' CompTIA A+ Core 1 & 2 courses on Udemy (frequently on sale for ~$15)
 
@@ -79,7 +79,7 @@ These certifications are accessible to beginners but reward prior familiarity wi
 
 **Type**: Theory + performance-based questions
 
-**Cost**: ~$425 USD (as of August 2025; CompTIA raised prices in June 2025). Discounts available through authorized resellers (~$340–$360). Voucher + retake bundle ~$808.
+**Cost**: ~$425 USD (as of August 2025; CompTIA raised prices in June 2025 — verify current pricing at comptia.org as CompTIA adjusts prices periodically). Discounts available through authorized resellers (~$340–$360). Voucher + retake bundle: ~$808.
 
 **Format**: Up to 90 questions, 90 minutes, passing score 750/900. Mix of multiple-choice and performance-based questions. Exam code SY0-701 (launched November 2023; the prior SY0-601 version retired July 31, 2024 — all candidates must now take SY0-701). Available at Pearson VUE centers or via online proctoring. Five domains: General Security Concepts (12%), Threats/Vulnerabilities/Mitigations (22%), Security Architecture (18%), Security Operations (28%), Program Management and Oversight (20%).
 
@@ -109,7 +109,7 @@ These certifications are accessible to beginners but reward prior familiarity wi
 **Study resources**:
 - [Professor Messer's Free Network+ N10-009 Course](https://www.professormesser.com/network-plus/n10-009/n10-009-video/n10-009-training-course/) — free video series
 - Jason Dion's Network+ course on Udemy (frequently ~$15)
-- [Professor Messer's Practice Exams](https://www.professormesser.com/network-plus/n10-009/n10-009-video/n10-009-training-course/) — paid practice tests
+- [Professor Messer's Practice Exams](https://www.professormesser.com/practice-exams/) — paid practice tests (Network+ practice exams are separate from the video training course)
 
 ---
 
@@ -117,7 +117,7 @@ These certifications are accessible to beginners but reward prior familiarity wi
 
 **Type**: Theory-heavy; optional practical add-on
 
-**Cost**: ~$950–$1,199 USD for the knowledge exam (varies by delivery method: EC-Council remote proctoring vs. Pearson VUE). A $100 application fee applies if self-studying without official EC-Council training. The CEH Practical (separate, hands-on) is an additional ~$550.
+**Cost**: ~$950–$1,199 USD for the knowledge exam (varies by delivery method: EC-Council remote proctoring vs. Pearson VUE). A $100 application fee applies if self-studying without official EC-Council training. The CEH Practical (separate, hands-on) is an additional ~$550. An $80/year EC-Council membership fee is required to maintain certification status.
 
 **Format**: 125 multiple-choice questions, 4 hours. Passing score varies by exam form (typically 60–85%). Delivered online or at Pearson VUE. A separate CEH Practical exam is a 6-hour hands-on lab with 20 real-world challenges.
 
@@ -138,9 +138,9 @@ These certifications are accessible to beginners but reward prior familiarity wi
 
 **Type**: Theory + practical lab-based questions (CyberLive)
 
-**Cost**: ~$949–$999 USD for the exam alone (two attempts included). The associated SANS SEC401 training course adds ~$8,500–$8,645 if taken formally. Renewal every four years costs $499 and requires 36 CPE credits annually. Note: GSEC can be attempted without purchasing the SANS course, making exam-only cost the realistic figure for self-study candidates.
+**Cost**: ~$949–$999 USD for the exam alone (two attempts included). The associated SANS SEC401 training course adds ~$8,500–$8,645 if taken formally. Renewal every four years costs $499 and requires 36 CPE credits over the four-year renewal period. Note: GSEC can be attempted without purchasing the SANS course, making exam-only cost the realistic figure for self-study candidates.
 
-**Format**: 106 questions, 4 hours. Open-book and open-note exam (candidates may bring printed notes). Approximately 10–11 questions are CyberLive (browser-based lab scenarios requiring active system interaction). Passing score is 73%. Two practice exams are included with the certification attempt.
+**Format**: 106 questions, 4 hours. Open-book and open-note exam (candidates may bring printed notes). Approximately 10–11 questions are CyberLive (browser-based lab scenarios requiring active system interaction). Passing score is 73%. Two practice tests are included with the exam registration (these are practice tests, not additional exam attempts).
 
 **Why it matters**: GSEC is GIAC's foundational security certification, backed by SANS Institute — the most technically rigorous training organization in the industry. It sits above Security+ in technical depth and is frequently listed in enterprise and government job postings alongside or instead of Security+. It is particularly respected in the US federal and defense contractor market (DoD 8140 approved) and carries weight with technically sophisticated hiring managers who regard SANS/GIAC credentials as more rigorous than CompTIA. The open-book format tests applied knowledge, not memorization. Salary data indicates GSEC holders average $90,000+ annually (US market). In Vietnam and APAC, the SANS/GIAC brand is less common in SME hiring but highly recognized at enterprise, multinational, and government levels.
 
@@ -161,7 +161,7 @@ These certifications are accessible to beginners but reward prior familiarity wi
 
 **Cost**: ~$392 USD
 
-**Format**: Up to 85 questions, 165 minutes, passing score 750/900. Exam code CS0-003. Performance-based and multiple-choice. Pearson VUE or online proctoring.
+**Format**: Up to 85 questions, 165 minutes, passing score 750/900. Exam code CS0-004 (launched January 2026, replacing CS0-003 which retired January 5, 2026). Performance-based and multiple-choice. Pearson VUE or online proctoring.
 
 **Why it matters**: CySA+ targets the blue team / SOC analyst role, covering threat detection, behavioral analytics, SIEM, vulnerability management, and incident response. It is CompTIA's mid-level security certification and is recognized internationally and within DoD 8140. For candidates interested in defensive security roles — which represent the majority of cybersecurity employment — CySA+ is a natural step after Security+.
 
@@ -184,7 +184,7 @@ These certifications require candidates to demonstrate hands-on skills in simula
 
 **Type**: 100% hands-on lab exam
 
-**Cost**: ~$200 for the exam voucher (includes one free retake if used within 14 days of a failed attempt). INE Fundamentals Annual plan (~$299/year) includes the voucher plus course access. The Penetration Testing Student (PTS) learning path — the primary prep course — is accessible on INE's free Starter Pass.
+**Cost**: ~$200 for the exam voucher (includes one free retake if used within 14 days of a failed attempt — verify current retake policy at ine.com as INE updates policies frequently). INE Fundamentals Annual plan (~$299/year) includes the voucher plus course access. The Penetration Testing Student (PTS) learning path — the primary prep course — is accessible on INE's free Starter Pass.
 
 **Format**: 35 questions answered within a 48-hour window using a live, browser-based lab environment. Passing score is 70%. Questions require active exploitation of lab systems to answer — this is not a multiple-choice test of memorized facts. One free retake is included.
 
@@ -222,7 +222,7 @@ These certifications require candidates to demonstrate hands-on skills in simula
 
 **Type**: 100% practical / report-based exam
 
-**Cost**: ~$499 USD (includes exam attempt, lifetime free retake, and 12 months of access to the bundled TCM training path). 20% discount for students, military, and first responders.
+**Cost**: ~$499 USD (includes exam attempt, lifetime free retake, and 12 months of access to the bundled TCM training path — verify current retake policy at certifications.tcm-sec.com as TCM Security may update terms). 20% discount for students, military, and first responders.
 
 **Format**: 5 days to complete a realistic network penetration test (external OSINT, internal Active Directory compromise) plus 2 additional days to write a professional penetration test report. No flags. No multiple choice. Candidates also conduct a live 15-minute debrief call with a TCM assessor to review findings.
 
@@ -241,7 +241,7 @@ These certifications require candidates to demonstrate hands-on skills in simula
 
 **Type**: 100% hands-on lab exam (auto-graded)
 
-**Cost**: Requires an INE Premium subscription plus an exam voucher. Bundled pricing (course + exam) runs approximately $400–$600 depending on current INE promotional pricing; the standalone exam voucher requires an active subscription. INE regularly runs promotional sales of 30–50% off. Check security.ine.com for current pricing; do not rely on historical figures as INE adjusts pricing frequently.
+**Cost**: Requires an INE Premium subscription plus an exam voucher. Bundled pricing (course + exam) runs approximately ~$400–$600 depending on current INE promotional pricing; the standalone exam voucher requires an active subscription. INE regularly runs promotional sales of 30–50% off. Verify current pricing at security.ine.com; do not rely on historical figures as INE adjusts pricing frequently.
 
 **Format**: Fully hands-on, auto-graded practical exam. Candidates work within a live lab environment to compromise systems using enumeration, exploitation, Active Directory attacks, and pivoting. The exam was modernized in 2024–2025 with an auto-graded system for faster results and a three-year renewal cycle. No multiple-choice questions.
 
@@ -262,7 +262,7 @@ These certifications require candidates to demonstrate hands-on skills in simula
 
 **Type**: 100% practical / scenario-based lab exam
 
-**Cost**: ~$540 USD (approximately £399 GBP). Includes the full course and one exam attempt.
+**Cost**: ~$540 USD (approximately £399 GBP — USD equivalent varies with exchange rate fluctuations). Includes the full course and one exam attempt.
 
 **Format**: 24-hour open-book practical exam accessed through a browser-based lab environment. Candidates investigate realistic security incidents across 20 tasks. No proctoring — open to notes, search engines, and course materials. Passing requires 70%; scoring 90%+ on first attempt earns the Gold Coin distinction. Course includes 315 topics, 32 quizzes, and ~100 hours of lab access.
 
@@ -281,7 +281,7 @@ These certifications require candidates to demonstrate hands-on skills in simula
 
 **Type**: 100% hands-on 24-hour exam
 
-**Cost**: PEN-200 course + exam starts at ~$1,749 (includes 90 days lab access and one exam attempt). Standalone OSCP+ exam only: ~$1,699 (two attempts, no course material). Learn Unlimited plan: ~$6,099/year.
+**Cost**: PEN-200 course + exam starts at ~$1,749 (includes 90 days lab access and one exam attempt — verify current pricing at offsec.com as OffSec adjusts prices periodically). Standalone OSCP+ exam only: ~$1,699 (two attempts, no course material). OSCP+ is the auto-renewing designation introduced by OffSec — holders maintain active status through continuous subscription rather than traditional renewal. Learn Unlimited plan: ~$6,099/year.
 
 **Format**: 24-hour live exam in which candidates must exploit multiple standalone machines and an Active Directory environment, totaling 100 points. A further 24 hours is allowed to write and submit a professional penetration test report. No prerequisites are formally required, but Offensive Security strongly recommends solid Linux, Windows, networking, and basic scripting knowledge before attempting. Passing requires 70 points.
 
@@ -300,7 +300,7 @@ These certifications require candidates to demonstrate hands-on skills in simula
 
 | Certification | Issuer | Tier | Type | Cost (USD approx.) | Hands-On? | Employer Recognition | Best Career Track |
 |---|---|---|---|---|---|---|---|
-| ISC2 CC | ISC2 | 1 | Multiple-choice | Free + $50/yr AMF | No | Medium-High (ISC2 brand) | General security, compliance |
+| ISC2 CC | ISC2 | 1 | Multiple-choice | Free + ~$50/yr AMF | No | Medium-High (ISC2 brand) | General security, compliance |
 | Google Cybersecurity Cert | Google/Coursera | 1 | Course certificate | ~$200–$295 | Guided labs | Medium (growing) | Career starter, IT support |
 | CompTIA A+ | CompTIA | 1 | Multiple-choice + PBQ | ~$492 (2 exams) | Partial | High (IT baseline) | IT support, pre-security |
 | CompTIA Network+ | CompTIA | 2 | Multiple-choice + PBQ | ~$369 | Partial | High | Network security, infrastructure |
@@ -416,7 +416,7 @@ At this point, choose a focus: offensive (penetration testing / red team) or def
 
 The following are not traditional exam-based certifications but carry significant weight in the Vietnamese cybersecurity market and should be understood alongside personal certifications:
 
-- **ISO/IEC 27001:2022** (organizational): The most widely recognized information security management system standard. Vietnamese government procurement teams, international outsourcing clients, and regulated-sector buyers frequently require ISO 27001 certification from vendors. This is an organizational certification (not personal), but consultants who understand the ISO 27001 gap analysis and audit process are highly valued. The 2022 revision is now the current standard — firms still on the 2013 version risk losing certification validity after the October 2025 transition deadline.
+- **ISO/IEC 27001:2022** (organizational): The most widely recognized information security management system standard. Vietnamese government procurement teams, international outsourcing clients, and regulated-sector buyers frequently require ISO 27001 certification from vendors. This is an organizational certification (not personal), but consultants who understand the ISO 27001 gap analysis and audit process are highly valued. The 2022 revision is now the current standard — the October 2025 transition deadline has passed, and organizations should now be on the 2022 version — firms still on the 2013 version have lost certification validity.
 - **OWASP membership / contributor status**: OWASP is well-known among Vietnamese developers. Active OWASP contribution (published tools, rule sets, or community involvement) signals technical credibility in developer-led buying decisions.
 - **VNCERT/CC endorsement**: Vietnam Computer Emergency Response Team approval or partnership carries government-adjacent credibility, particularly important for firms serving regulated sectors or public-sector clients.
 - **Sao Khue award**: Vietnam's annual tech excellence award (organized by VINASA). Winning or being nominated signals domestic legitimacy to Vietnamese enterprise buyers who may not recognize international certification bodies. CyStack won Sao Khue 2025 for cybersecurity products.
@@ -430,4 +430,4 @@ The following are not traditional exam-based certifications but carry significan
 
 ---
 
-*Last updated: 2026-03-07*
+*Last updated: 2026-03-15*

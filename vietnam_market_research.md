@@ -1,6 +1,6 @@
 # Vietnam Cybersecurity Market Research & Marketing Strategy
 
-**Last updated:** 2026-03-07
+**Last updated:** 2026-03-15
 **Purpose:** Automated security guardrail assessment platform — market entry research for small Vietnamese software firms
 
 **Related documents:** [certifications.md](certifications.md) (certification guide for consultants/clients) | [security_agent_plan.md](security_agent_plan.md) (technical tool plan)
@@ -15,20 +15,24 @@ Vietnam's cybersecurity market is one of the fastest-growing in Southeast Asia, 
 
 | Source | 2025 Estimate | Projection | CAGR |
 |--------|--------------|------------|------|
-| Mordor Intelligence | USD 310.22M | USD 384.22M (2030) | 14.80% |
+| Mordor Intelligence | USD 310.22M | USD 384.22M (2030) | 14.80% * |
 | Statista | USD 335.50M | — | — |
 | PS Market Research | USD 322.6M | USD 926.8M (2032) | 16.3% |
 | Nexdigm (broader IT security scope) | USD 2.4B (2024) | — | ~15% |
 
+**\* Mordor Intelligence data inconsistency (requires verification):** The stated 14.8% CAGR applied to USD 310.22M over 5 years would yield approximately USD 618M by 2030, not USD 384.22M. The USD 384.22M projection implies only ~4.4% CAGR. Either the CAGR, the base year value, or the 2030 projection is incorrect in the source material. All three figures are retained as published but should not be relied upon together without verification against the original Mordor Intelligence report.
+
+**Note on Nexdigm estimate:** Nexdigm's USD 2.4B figure likely reflects a broader scope that includes IT security, GRC (governance/risk/compliance), compliance services, and managed IT services beyond pure cybersecurity products and services. This explains the significant discrepancy with other estimates that focus on the cybersecurity product and services market specifically.
+
 **Working estimate:** The addressable market for cybersecurity products and services in Vietnam sits in the USD 310–340M range in 2025, growing to USD 600–930M by 2030–2032 depending on scope. The broader IT security market (including compliance tools, managed services, and consulting) likely exceeds USD 500M already when informal spending is included.
 
-The top five suppliers collectively control less than 35% of Vietnam cybersecurity market revenue, indicating a highly fragmented market with room for new entrants.
+The top five suppliers collectively control less than 35% of Vietnam cybersecurity market revenue, indicating a highly fragmented market with room for new entrants (source attribution needed — likely Mordor Intelligence or PS Market Research competitive analysis).
 
-Cloud deployments captured 56.5% of Vietnam cybersecurity revenue in 2024, a trend that favors SaaS-delivered security services.
+Cloud deployments captured 56.5% of Vietnam cybersecurity revenue in 2024 (source attribution needed), a trend that favors SaaS-delivered security services.
 
 ### 1.2 Growth Rate and Projections
 
-- CAGR consensus: **14.8% to 16.3%** through 2030–2032
+- CAGR range across research firms: **14.8% to 16.3%** through 2030–2032 (Mordor Intelligence at 14.8%, PS Market Research at 16.3% — not a single authoritative figure; see Mordor Intelligence data inconsistency note in Section 1.1)
 - APAC cybersecurity overall: USD 74.22B in 2025, projected USD 141.04B by 2030 at 13.7% CAGR
 - Managed security services (MSSP) projected to expand at **21.4% CAGR** through 2030 — the fastest subsegment
 - Cloud security services in APAC growing at **22% CAGR** through 2026
@@ -39,8 +43,8 @@ Vietnam is outpacing the APAC average due to rapid digital adoption against a lo
 
 1. **Regulatory pressure**: Cascade of new laws (Cybersecurity Law 2025, Decree 356/2025, PDPL 2025) forcing compliance investment
 2. **Digital transformation acceleration**: Government National Digital Transformation Program targeting 100% of state services online by 2025; cloud migration among SMEs accelerating
-3. **Attack volume surge**: 659,000 cyberattacks recorded in 2024; 552,000 attacks recorded in full-year 2025 (down 19.4% in volume but with substantially higher per-incident financial damage and a sharp Q3 2025 resurgence — attackers shifted to targeted, AI-assisted approaches)
-4. **Workforce shortage**: ~700,000 cybersecurity professional shortfall creates demand for automated tooling and outsourced services
+3. **Attack volume surge**: 659,000 cyberattacks recorded in 2024 (NCSC/VNCERT data); 552,000 attacks recorded in full-year 2025 (down 19.4% in volume but with substantially higher per-incident financial damage and a sharp Q3 2025 resurgence — attackers shifted to targeted, AI-assisted approaches)
+4. **Workforce shortage**: Vietnam needs ~700,000 cybersecurity specialists by 2028 but has a projected shortfall of ~500,000, meaning current capacity is approximately 200,000 — this gap creates demand for automated tooling and outsourced services
 5. **International business integration**: Growing outsourcing sector must meet international client security expectations
 6. **FDI inflows**: Foreign direct investment in Vietnam's tech sector surpassed USD 5B in 2025; foreign firms require local partners to meet compliance obligations
 7. **Public sector budget**: ~USD 100M public-sector cybersecurity budget accelerating national cyber-resilience programs
@@ -185,11 +189,11 @@ For small software firms in Vietnam, the buying decision for security services i
 
 | Company | Focus | Relative Size |
 |---------|-------|--------------|
-| **Viettel Cyber Security** | Full-stack: SOC, threat intelligence, incident response, CII protection; spun out April 2025 with 500 specialists | Large (state-affiliated) |
+| **Viettel Cyber Security** | Subsidiary of Viettel Group (military-owned telecom conglomerate); full-stack: SOC, threat intelligence, incident response, CII protection; spun out April 2025 with 500 specialists | Large (state-affiliated, military-owned parent) |
 | **CMC Cyber Security** | Security assessments, pen testing, MSSP, incident response; backed by CMC Corp's USD 250M datacenter | Large |
-| **BKAV** | Antivirus, endpoint, network security; government relationships; OPSWAT partnership for 99%+ detection | Large (legacy brand) |
+| **BKAV** | Consumer antivirus and enterprise endpoint/network security; government relationships; OPSWAT partnership for 99%+ detection; serves both individual consumers (Bkav Pro) and enterprise/government clients | Large (legacy brand) |
 | **VNCS (Vietnam Cyberspace Security Technology)** | Integrated network security, consulting, government/enterprise; founded 2011 under Hanoi Telecom | Mid-size |
-| **FPT Information System** | Security as part of broader IT services; leverages FPT's 30,000-engineer base | Large (via parent) |
+| **FPT Information System (FPT IS)** | Subsidiary of FPT Corporation; security as part of broader IT services; leverages FPT's 30,000-engineer base | Large (via parent FPT Corporation) |
 | **VSEC** | Vietnam's first CREST-certified firm (dual CREST for pentest and SOC); penetration testing, security consulting, MDR/SOC; founded 2003; one of Vietnam's oldest MSSPs | Mid-size boutique |
 | **CyStack** | Automated security, crowdsourced testing (WhiteHub bug bounty platform), AI-powered vulnerability scanning; CREST-approved; Sao Khue 2025 award winner; expanding regionally (Korea K-Startup 2025) | Small-Mid boutique |
 | **NCS (Network and Communications Security)** | "Make in Vietnam" product suite: next-gen firewall, EDR, threat intelligence, OT/ICS security; SOC operations; serves EVN, Vietcombank, Petrolimex | Mid-size |
@@ -234,8 +238,8 @@ This represents the primary competitive "alternative" — not a competing firm, 
 ### 5.1 Reported Incidents and Breaches
 
 **2024 Statistics:**
-- **659,000 cyberattacks** recorded in 2024
-- **14.5 million accounts** compromised due to data breaches in 2024, representing **12% of global breaches** (disproportionately high for a mid-sized economy)
+- **659,000 cyberattacks** recorded in 2024 (NCSC/VNCERT data)
+- **14.5 million accounts** compromised due to data breaches in 2024, representing an estimated **12% of global breaches** (unverified — this figure needs a specific citation and year; disproportionately high for a mid-sized economy if accurate, but the claim is suspiciously specific and may conflate different breach metrics)
 - **155,600 computers** hit by ransomware attacks in 2024
 - **14.59%** of surveyed organizations hit by ransomware in 2024
 - **46.15%** of entities reported at least one attack in 2024
@@ -278,11 +282,11 @@ Vietnam's software outsourcing sector serves clients primarily in Japan, South K
 
 Vietnamese outsourcing firms that cannot demonstrate security posture risk losing international contracts — making security investment directly revenue-protective. This is the strongest demand signal in the market.
 
-**Major Vietnamese outsourcing firms that are representative target customers** for security services in this segment include: NashTech (established 1988, large UK-Vietnam tech firm), KMS Technology (founded 2009, US-Vietnam, 130+ global clients), Orient Software (HCMC/Da Nang/Hanoi, custom software for global clients since 2005), and Axon Active (Swiss-owned, HCMC-based agile development). These firms' international contract cycles are the primary trigger for security investment decisions.
+**Major Vietnamese outsourcing firms that are representative target customers** for security services in this segment include: NashTech (founded 2000 as Harvey Nash's Vietnam operation, large UK-Vietnam tech firm), KMS Technology (founded 2009, US-Vietnam, 130+ global clients), Orient Software (HCMC/Da Nang/Hanoi, custom software for global clients since 2005), and Axon Active (Swiss-owned, HCMC-based agile development). These firms' international contract cycles are the primary trigger for security investment decisions.
 
 ### 5.4 Talent and Skills Gap Analysis
 
-- Vietnam faces a **700,000 cybersecurity professional shortfall** projected through 2028
+- Vietnam needs approximately **700,000 cybersecurity specialists by 2028** but faces a projected **shortfall of ~500,000** (implying current capacity of approximately 200,000 professionals)
 - 56% of organisations report insufficient IT and cybersecurity personnel
 - 47.72% of organizations have no dedicated cybersecurity staff
 - Government plans to train 50,000–100,000 skilled cybersecurity workers by 2030 — a decade-long gap
@@ -470,7 +474,7 @@ Content marketing in Vietnamese is underutilized in the security space — most 
 
 **Tier 1: Starter (Freemium/Trial)**
 - Price: Free (community tier) or USD 0 with email capture
-- Scope: Automated OWASP Top 10 scan of one web application; basic report
+- Scope: Automated OWASP Top 10 (2021, or current version at time of implementation) scan of one web application; basic report
 - Purpose: Lead generation, market education, trust-building
 - Output: Automated report with 3–5 critical findings and remediation links
 
@@ -493,6 +497,8 @@ Content marketing in Vietnamese is underutilized in the security space — most 
 - Differentiator: Combines automation speed with human expert judgment; priced at or below manual pen test cost while delivering more continuous value
 
 **Pricing rationale:** The Basic and Standard tiers are priced to be accessible to firms spending as little as USD 5,000–15,000 annually on security. The freemium tier seeds awareness in a market where security investment is not yet habitual. The Premium tier anchors value at below-market manual pen test cost.
+
+**Cross-reference note:** For PPP-adjusted (purchasing power parity) Vietnam-specific pricing tiers and revenue projections, see [business_case_validation.md](business_case_validation.md) Section 4, which provides Vietnam-adjusted pricing (Starter: USD 20–40/month, Professional: USD 60–120/month, Enterprise: USD 200–480/month). The pricing in this section reflects pre-adjustment aspirational ranges; the business_case_validation.md figures should be used as the authoritative pricing basis for financial modeling.
 
 ### 7.5 Trust-Building Strategy
 
@@ -523,7 +529,7 @@ A freemium model is recommended for the Vietnamese market for three reasons:
 
 **Free tier should include:**
 - One automated scan per month (one application)
-- OWASP Top 10 scan with severity ratings
+- OWASP Top 10 (2021, or current version at time of implementation) scan with severity ratings
 - Vietnamese-language remediation guidance for top 3 findings
 - No consultant review (upsell trigger)
 
@@ -607,7 +613,7 @@ Ironically, Vietnam's data localization requirements may apply to the security p
 
 ### 9.1 Top 3 Priority Actions
 
-**Priority 1: Launch a free OWASP Top 10 scan tier immediately (within 30 days)**
+**Priority 1: Launch a free OWASP Top 10 (2021, or current version at time of implementation) scan tier immediately (within 30 days)**
 
 The market education cycle is long. The only way to accelerate it is to let firms experience the product. A free, no-friction automated scan that produces Vietnamese-language results within 24 hours will generate word-of-mouth in tightly networked developer communities faster than any paid marketing channel. Gate follow-on value (compliance mapping, consultant review) behind paid tiers.
 

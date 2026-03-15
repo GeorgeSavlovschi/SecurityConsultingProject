@@ -1,6 +1,6 @@
 # Business Case Validation Playbook
 
-**Last updated:** 2026-03-13
+**Last updated:** 2026-03-15
 **Purpose:** Validate market demand for an automated security guardrail assessment tool before committing development investment
 **Related documents:** [vietnam_market_research.md](vietnam_market_research.md) | [security_agent_plan.md](security_agent_plan.md) | [certifications.md](certifications.md) | [master_plan.md](master_plan.md)
 
@@ -17,7 +17,7 @@ Product validation follows a two-phase framework:
 
 These are fundamentally different questions. Most failed products skip the first and jump straight to building a solution for a problem that does not hurt enough.
 
-CB Insights data shows **42% of startups fail because they build something nobody wants** — making "no market need" the single most common cause of startup death, ahead of running out of cash (29%) and team problems (23%). In cybersecurity specifically, the failure rate is even worse: **58% of cybersecurity startups fail within 5 years** (Momentum Cyber, 2023). This is not a friendly industry for new entrants.
+CB Insights data shows **42% of startups fail because they build something nobody wants** — making "no market need" the single most common cause of startup death, ahead of running out of cash (29%) and team problems (23%) (CB Insights, "Top 20 Reasons Startups Fail," 2021). In cybersecurity specifically, the failure rate is even worse: **58% of cybersecurity startups fail within 5 years** (widely cited industry estimate, attributed to Momentum Cyber, 2023 — note: this specific figure is commonly referenced but the primary source is difficult to verify from Momentum Cyber's public reports). This is not a friendly industry for new entrants.
 
 ### The circular reasoning trap
 
@@ -93,7 +93,7 @@ Before diving into validation phases, understand the specific ways this venture 
 
 ### Signal 4: Competing with Free and Open-Source — CRITICAL
 
-**The statistic:** 58% of cybersecurity startups fail within 5 years (Momentum Cyber, 2023). A major reason is that the cybersecurity space is saturated with free tools.
+**The statistic:** 58% of cybersecurity startups fail within 5 years (widely cited industry estimate, attributed to Momentum Cyber, 2023 — primary source difficult to verify). A major reason is that the cybersecurity space is saturated with free tools.
 
 **How it applies:** Every scanning tool you plan to use in your product — OWASP ZAP, Semgrep, Trivy, npm audit — is free and open-source. A technically skilled CTO can set these up in a weekend. Your value proposition is not the scanning itself but the aggregation, prioritization, Vietnamese-language reporting, and compliance mapping. The question is whether that wrapper is worth $60-120/month to someone who could do it themselves for free.
 
@@ -273,7 +273,7 @@ SAST stands for Static Application Security Testing — tools that scan source c
 
 **The statistic:** Survivorship bias causes founders to overweight success stories and underweight the base rate of failure.
 
-**How it applies:** When you read about CyStack's success or Vietnam's $310M cybersecurity market, you are seeing survivors. You are not seeing the dozens of Vietnamese cybersecurity startups that launched and failed quietly. The 58% failure rate for cybersecurity startups (globally) is the base rate you should anchor on, not the success stories.
+**How it applies:** When you read about CyStack's success or Vietnam's $310M cybersecurity market, you are seeing survivors. You are not seeing the dozens of Vietnamese cybersecurity startups that launched and failed quietly. The 58% failure rate for cybersecurity startups (globally, widely cited estimate) is the base rate you should anchor on, not the success stories.
 
 **Test to run:** Search for Vietnamese cybersecurity startups that launched in 2020-2023. How many are still operating? How many have paying customers? If you cannot find this data, that itself is informative — the failures are invisible.
 
@@ -345,6 +345,8 @@ All phase timelines below are calculated assuming:
 - **FAIL:** Problem acknowledged but ranked low priority, or "we'll deal with it when we have to"
 - **PIVOT SIGNAL:** If the pain is real but centered on a different problem than expected (e.g., compliance documentation rather than vulnerability scanning), adjust the product hypothesis
 
+**Note on sample size:** 15-20 interviews is a minimum for initial pattern recognition in customer development methodology, not a statistically significant sample. Patterns that emerge from 15-20 conversations provide directional confidence for go/no-go decisions, but quantitative conclusions (e.g., "53% of CTOs prioritize security") should not be presented with statistical precision. If Phase 1 results are ambiguous, consider extending to 25-30 interviews before making a kill decision.
+
 **Evidence to collect:** Verbatim quotes, recurring pain points (tally them), current workaround costs, budget signals, specific lost-deal stories
 
 ---
@@ -388,7 +390,7 @@ All phase timelines below are calculated assuming:
 **Direct cost:** ~$0
 
 **Methodology explained:** Market sizing uses three nested concepts:
-- **TAM (Total Addressable Market):** The total revenue opportunity if you captured 100% of the market. For cybersecurity in Vietnam, this is ~$310M.
+- **TAM (Total Addressable Market):** The total revenue opportunity if you captured 100% of the market. For cybersecurity in Vietnam, this is ~$310-336M depending on the research source (see [vietnam_market_research.md](vietnam_market_research.md) Section 1.1 for detailed source comparison: Mordor Intelligence $310M, Statista $336M, PS Market Research $323M).
 - **SAM (Serviceable Available Market):** The portion of TAM that your specific product type could serve. For automated security scanning for software firms, this is much smaller.
 - **SOM (Serviceable Obtainable Market):** The portion of SAM you can realistically capture in a given timeframe. This is what matters for planning.
 
@@ -414,8 +416,8 @@ All pricing below uses PPP-adjusted rates (see Section 4 for full analysis).
 **Note on SOM recalculation:** With Vietnam-adjusted pricing ($40-120/month vs. $100-300/month in the original), the revenue per customer is substantially lower. This means you need more customers to reach the same revenue, or you need to accept that this is a smaller business than US-priced models would suggest. See Section 11 for three-scenario projections.
 
 **Go/no-go gate:**
-- **PASS:** Year-3 SOM exceeds $200K ARR (Annual Recurring Revenue — the total value of all subscriptions measured annually) with reasonable assumptions
-- **FAIL:** SOM requires unrealistic market share (>15% of reachable firms) or unrealistic pricing
+- **PASS:** Year-3 SOM exceeds $100K ARR (Annual Recurring Revenue — the total value of all subscriptions measured annually) with reasonable assumptions. A $200K+ Year-3 SOM is a strong signal; $100K-200K is viable but tighter.
+- **FAIL:** Year-3 SOM below $100K ARR (aligns with Section 9 kill criteria), or SOM requires unrealistic market share (>15% of reachable firms) or unrealistic pricing
 - **CROSS-CHECK:** Compare bottom-up estimate with the top-down Vietnam cybersecurity market size ($310M). Your SOM should be <1% of TAM — if it is higher, your assumptions are too aggressive
 
 **Data sources for Vietnam:**
@@ -651,7 +653,13 @@ Additionally:
 | 8. PMF Survey | 44+ | Ongoing | 12 | $0 |
 | **Total** | **~46 weeks** | **~11-12 months** | | **$746-2,029** |
 
-Note: Phases overlap (you continue outreach for Phase 6 while running Phase 5 assessments, etc.). The actual calendar time is ~11-12 months, not 46 sequential weeks. Some phases (2, 3, 8) are primarily evening analysis work and do not consume weekend meeting slots.
+**Note on overlapping timelines:** Several phases run in parallel by design. Specifically:
+- **Phases 1-2-3 overlap (weeks 6-14):** Phase 2 (JTBD mapping) and Phase 3 (market sizing) are evening analysis work that runs alongside late Phase 1 interviews. They do not compete for weekend meeting slots.
+- **Phases 4-5 overlap (weeks 16-20):** Phase 4 landing page data collection continues passively while Phase 5 concierge assessments begin with the strongest Phase 1 prospects. Different activities (online vs. in-person).
+- **Phases 5-6 overlap (weeks 28-30):** Phase 6 pre-sales outreach begins with new prospects while Phase 5 assessment follow-ups continue with existing contacts. Both require weekend meetings — prioritize assessment delivery over new outreach during overlap.
+- **Phases 6-7 overlap (weeks 34-38):** Pilot recruitment (Phase 7) begins with the strongest Phase 6 pre-sale contacts while remaining pre-sales outreach continues. Both require weekend meetings — prioritize pilot setup.
+
+The actual calendar time is ~11-12 months, not 46 sequential weeks. Phases 2, 3, and 8 are primarily evening analysis work and do not consume weekend meeting slots.
 
 ---
 
@@ -659,15 +667,15 @@ Note: Phases overlap (you continue outreach for Phase 6 while running Phase 5 as
 
 ### Why PPP matters
 
-PPP (Purchasing Power Parity) measures how much a currency can actually buy in its local economy compared to what a dollar buys in the US. Vietnam's PPP ratio is approximately **0.19-0.20 of the US** — meaning that $1 in Vietnam buys roughly what $5 buys in the US.
+PPP (Purchasing Power Parity) measures how much a currency can actually buy in its local economy compared to what a dollar buys in the US. Vietnam's PPP conversion factor is approximately **3.0-3.5x** (World Bank data) — meaning that $1 in Vietnam buys roughly what $3-3.50 buys in the US in terms of local goods and services. Some estimates using broader baskets of goods suggest ratios up to 5x for consumer spending, but the 3.0-3.5x factor is the most commonly cited and conservative estimate for B2B pricing decisions.
 
 This has direct implications for pricing:
 
 | Metric | Vietnam | United States | Ratio |
 |---|---|---|---|
 | Average developer salary | $12,000-20,000/year | $108,000-121,000/year | ~1:6 to 1:10 |
-| PPP adjustment factor | 0.19-0.20 | 1.00 | ~1:5 |
-| SME software budget | Proportionally 1/5th to 1/6th of US | — | — |
+| PPP conversion factor (World Bank) | 3.0-3.5x | 1.00 | Local purchasing power 3-3.5x higher per USD |
+| SME software budget | Proportionally 1/3rd to 1/6th of US (varies by cost type) | — | — |
 
 **What this means in practice:** A US cybersecurity SaaS product priced at $200/month would need to be priced at approximately **$35-60/month** in Vietnam to feel equivalently affordable. Vietnamese SaaS products that succeed in the SME market typically price between **$7-40/month** for basic tiers.
 
@@ -686,6 +694,8 @@ This has direct implications for pricing:
 **Professional** includes: Weekly scans, up to 5 projects, PDPL compliance mapping, priority support, English + Vietnamese reports.
 
 **Enterprise** includes: Unlimited projects, daily scans, dedicated support, custom compliance frameworks, API access.
+
+> **Pricing reconciliation note:** The [vietnam_market_research.md](vietnam_market_research.md) document lists higher pricing tiers (e.g., USD 150-300/month for Basic Assessment, USD 400-800/month for Standard) based on international market benchmarks before PPP adjustment. The Vietnam-adjusted tiers above are the authoritative pricing for this business case. The difference reflects PPP adjustment (see above) and the distinction between service tiers: the market research tiers include consultant-reviewed findings and manual components (managed service model), while the Starter and Professional tiers here are primarily automated self-service offerings. Both documents are internally consistent when accounting for service level and PPP adjustment.
 
 #### Per-assessment model (one-time)
 
@@ -1067,7 +1077,7 @@ Before running primary research, these existing data points provide directional 
 | DIY preference | Developers self-assess; free OSS tools are the default | HIGH | Phase 1 will confirm |
 | Decision complexity | Vietnamese SMEs average 6.8 stakeholders in purchase decisions | MEDIUM | B2B buying research |
 | Trust barrier | New foreign entrant in security domain faces trust deficit | HIGH | Market observation |
-| Cybersecurity startup failure rate | 58% fail within 5 years | CRITICAL | Momentum Cyber 2023 |
+| Cybersecurity startup failure rate | 58% fail within 5 years (widely cited estimate; primary source difficult to verify) | CRITICAL | Attributed to Momentum Cyber 2023 |
 | Existing competitor | CyStack offers automated SME scanning with CREST certification | CRITICAL | CyStack platform |
 
 ### What secondary data tells us — and what it cannot
@@ -1140,7 +1150,7 @@ The most common logical trap in this business case:
 
 ### Survivorship bias check
 
-**The base rate:** 58% of cybersecurity startups fail within 5 years (Momentum Cyber, 2023). This means that starting from scratch, you have roughly a 42% chance of survival — and that includes well-funded, full-time, team-based startups, not solo weekend founders.
+**The base rate:** 58% of cybersecurity startups fail within 5 years (widely cited industry estimate, attributed to Momentum Cyber, 2023). This means that starting from scratch, you have roughly a 42% chance of survival — and that includes well-funded, full-time, team-based startups, not solo weekend founders.
 
 **Why you might beat the base rate:**
 - Low burn rate (validation costs under $3K)
@@ -1198,6 +1208,10 @@ For each demand signal, consider: what would a skeptic say?
 4. The hybrid model (consulting + tool) provides more actionable guidance
 
 **Test this:** In Phase 1, ask: "Have you heard of CyStack? Have you tried them?" If most have heard of them and are satisfied, your differentiation problem is severe.
+
+> **Verify current pricing:** All competitor pricing references in this document (including CyStack, manual pen test benchmarks, and international SaaS comparisons) are based on data available at the time of writing. SaaS pricing changes frequently — verify current pricing directly before using these figures in customer conversations or financial projections.
+
+> **Action item — CyStack competitive deep-dive:** CyStack is the most direct competitor in the Vietnamese market. Before Phase 1 interviews begin, conduct a priority competitive assessment: (1) sign up for CyStack's free tier and document exact features, UX, and report quality; (2) research their current pricing tiers and any recent changes; (3) identify specific gaps in their offering (e.g., SAST depth, PDPL compliance mapping, English-language reporting for international clients); (4) prepare a differentiation matrix to test with Phase 1 interviewees. This assessment should be documented as a standalone analysis and referenced throughout validation.
 
 ### Channel viability check
 
@@ -1326,6 +1340,14 @@ Before committing to building the automated tool, you should have ALL of these:
 
 **If you can check 8+ of these 11 boxes, build the product. If fewer than 6, do not.**
 
+### Legal structure considerations
+
+> **Note:** Operating a cybersecurity consulting or service business in Vietnam requires specific legal considerations that should be addressed before or during early validation phases:
+> - **Business registration:** Foreign-owned businesses in Vietnam require an Investment Registration Certificate (IRC) and Enterprise Registration Certificate (ERC). The process typically takes 1-3 months. Alternatively, partnering with a Vietnamese-owned entity may simplify initial operations during the validation phase.
+> - **Decree 356/NĐ-CP compliance for security service providers:** Decree 356 establishes conditions for organizations providing cybersecurity services in Vietnam. Security service providers may need to meet specific licensing requirements, including personnel qualifications, technical infrastructure, and registration with the Ministry of Public Security (Department A05). Verify whether your planned service scope (automated scanning + consulting) triggers these requirements.
+> - **Data handling:** If your assessments involve accessing client source code or infrastructure, data handling agreements compliant with PDPL are required. This is both a legal requirement and a trust-building opportunity.
+> - **Recommendation:** Consult with a Vietnamese business law firm (e.g., VILAF, Tilleke & Gibbins Vietnam, or Baker McKenzie Vietnam) during Phase 3-4 to clarify requirements before accepting paying clients in Phase 5.
+
 ### Minimum viable exit ramps
 
 Even if the final decision is "no-go" on the product, the validation process produces:
@@ -1357,8 +1379,8 @@ None of this is wasted. The worst-case scenario is that you spent ~$1,000-2,500 
 - Lenny Rachitsky, product launch and feature scope analysis
 
 ### Startup Failure Research
-- CB Insights, "Top Reasons Startups Fail" (2021) — 42% = no market need
-- Momentum Cyber, "Cybersecurity Almanac" (2023) — 58% cybersecurity startup failure rate
+- CB Insights, "Top 20 Reasons Startups Fail" (2021) — 42% = no market need, 29% = ran out of cash
+- Momentum Cyber, "Cybersecurity Almanac" (2023) — 58% cybersecurity startup failure rate (widely cited industry estimate; primary source difficult to verify from public reports)
 - Startup Genome, "Startup Genome Report" — premature scaling data, solo founder statistics
 - Failory, post-mortem analysis of 300+ startups
 - First Round Capital, "State of Startups" annual reports — founder-market fit analysis

@@ -1,4 +1,6 @@
-﻿# Automated Guardrail Assessment Tool Plan for Small Software Firms in Vietnam
+﻿*Last updated: 2026-03-15*
+
+# Automated Guardrail Assessment Tool Plan for Small Software Firms in Vietnam
 
 ## Executive summary
 
@@ -20,7 +22,7 @@ Everything below prioritizes **free and open-source** tools; any paid options ar
 **Standards baseline (for credibility and consistent mapping).** The report outputs and control mappings should align to:
 - **SSDF (SP 800-218)** for secure software development practices and vulnerability response structure.
 - **ASVS** (use v5.0.0 as a reference requirements set) and **WSTG** (methodology framing to justify DAST scope).
-- **OWASP Top 10:2025** for the developer-facing “what risk class is this?” communication in findings.
+- **OWASP Top 10 (2021, or current version at time of implementation)** for the developer-facing “what risk class is this?” communication in findings.
 - **SLSA** provenance/levels language for supply chain integrity deliverables (even if you implement only partial levels initially).
 - **CycloneDX** and **SPDX** as SBOM formats.
 - **SARIF** as a structured results format for SAST integration with developer platforms.
@@ -28,7 +30,7 @@ Everything below prioritizes **free and open-source** tools; any paid options ar
 **Assumptions (explicit).**
 - The pipeline has outbound network access to fetch vulnerability databases/registries (OSV, NVD mirrors, etc.) and container base images.
 - DAST runs only against **staging/non-production** endpoints (or ephemeral previews). You maintain an allowlist of approved targets and require explicit opt-in for active scans. (ZAP “baseline” is designed to be non-attack/passive-focused; “full/api” scans are active.)
-- No single tech stack is assumed; the tool supports detection and conditional execution for **Node.js, Python, Java, .NET** based on repository signals (lockfiles, manifests, Dockerfile, CI variables). **PHP** is common in the Vietnamese market and should be added as a supported stack in the multi-runtime hardening phase (Composer lockfile detection, PHP-specific Semgrep rulesets, and SBOM support via Syft).
+- No single tech stack is assumed; the tool supports detection and conditional execution for **Node.js, Python, Java, .NET** based on repository signals (lockfiles, manifests, Dockerfile, CI variables). **PHP** is the most common web stack in the Vietnamese market (WordPress, Laravel) and should be **prioritized in Phase 2** (multi-runtime hardening), not deferred indefinitely. Phase 2 must include Composer lockfile detection, PHP-specific Semgrep rulesets, and SBOM support via Syft.
 
 ---
 
@@ -36,7 +38,9 @@ Everything below prioritizes **free and open-source** tools; any paid options ar
 
 The table below maps each guardrail item to **specific automated tests**, a **test type** (SAST/DAST/SCA/infra scan/secret scan/SBOM/SLSA checks/threat-model checklist), and recommended tools (OSS-first).
 
-> Tooling references: SBOM via Syft (CycloneDX/SPDX). SCA via OSV-Scanner and/or OWASP Dependency-Check and/or Grype. SAST via Semgrep CE. Secrets via Gitleaks. IaC/misconfig via Trivy/Checkov. Dockerfile via Hadolint. DAST via OWASP ZAP baseline/api scan. Repo hygiene via OpenSSF Scorecard. GitHub SLSA provenance via slsa-github-generator (and GitLab SLSA options exist).
+> Tooling references: SBOM via Syft (CycloneDX/SPDX). SCA via OSV-Scanner and/or OWASP Dependency-Check and/or Grype. SAST via Semgrep CE (see licensing caveat below). Secrets via Gitleaks. IaC/misconfig via Trivy/Checkov. Dockerfile via Hadolint. DAST via OWASP ZAP baseline/api scan. Repo hygiene via OpenSSF Scorecard. GitHub SLSA provenance via slsa-github-generator (and GitLab SLSA options exist).
+>
+> **Semgrep licensing caveat:** As of late 2024, Semgrep Inc made their managed registry rules proprietary for commercial use. The `--config auto` flag pulls from the Semgrep Registry, which requires a (free) Semgrep account for CI usage and may have commercial licensing restrictions. For fully open-source SAST, consider [Opengrep](https://github.com/opengrep/opengrep) as an emerging OSS fork alternative. Semgrep remains the best-in-class option for rule quality and ecosystem, but verify licensing terms before commercial deployment.
 
 | Guardrail item | Automated test(s) to implement | Test type | OSS tools (preferred) |
 |---|---|---|---|
@@ -86,18 +90,18 @@ The architecture is designed for **low-friction adoption** in small teams: one r
 
 ```mermaid
 flowchart TD
-  A[Developer PR MR] --> B[CI orchestrator guardrail runner]
-  B --> C[Detect stack and files]
+  A["Developer PR/MR"] --> B["CI orchestrator<br/>(guardrail-runner)"]
+  B --> C["Detect stack and files"]
 
-  C --> D[Build job]
-  C --> E[Policy runtime checks]
-  C --> F[Secrets scan]
-  C --> G[SAST]
-  C --> H[SBOM generation]
-  H --> I[SCA from lockfiles and SBOM]
-  C --> J[IaC and container hardening scans]
+  C --> D["Build job"]
+  C --> E["Policy/runtime checks"]
+  C --> F["Secrets scan"]
+  C --> G["SAST"]
+  C --> H["SBOM generation"]
+  H --> I["SCA from lockfiles and SBOM"]
+  C --> J["IaC and container<br/>hardening scans"]
 
-  D --> K[Artifact outputs]
+  D --> K["Artifact outputs"]
   E --> K
   F --> K
   G --> K
@@ -105,23 +109,23 @@ flowchart TD
   I --> K
   J --> K
 
-  K --> L[Artifact store]
-  L --> M[Normalizer and deduplicator]
-  M --> N[Unified JSON YAML SARIF]
-  N --> O[Human readable findings report]
+  K --> L["Artifact store"]
+  L --> M["Normalizer and deduplicator"]
+  M --> N["Unified JSON/YAML/SARIF"]
+  N --> O["Human-readable<br/>findings report"]
 
-  O --> P[Deploy to staging or preview]
-  P --> Q[DAST runner]
+  O --> P["Deploy to staging or preview"]
+  P --> Q["DAST runner"]
   Q --> L
 
-  O --> R[Release gate]
+  O --> R["Release gate"]
   Q --> R
-  R --> S[Release and deploy]
-  R --> T[Block and create or update issues]
+  R --> S["Release and deploy"]
+  R --> T["Block and create/update issues"]
 
-  S --> U[SLSA provenance and attestations]
+  S --> U["SLSA provenance<br/>and attestations"]
   U --> L
-  T --> V[Vulnerability management platform optional DefectDojo]
+  T --> V["Vulnerability management platform<br/>(optional DefectDojo)"]
 ```
 
 Design notes:
@@ -164,7 +168,7 @@ Design notes:
 - Parse outputs, map to:
   - ASVS control references (at least “chapter + requirement id” for common items)
   - SSDF practice buckets (Prepare/Protect/Produce/Respond) at a coarse level
-  - OWASP Top 10:2025 category labels for developer-friendly framing
+  - OWASP Top 10 (2021, or current version at time of implementation) category labels for developer-friendly framing
 - Generate:
   - `findings.json` (canonical)
   - `findings.yaml` (human-greppable)
@@ -225,7 +229,7 @@ Design notes:
 **Secrets management (do not ship risk into your own tooling)**
 - Use CI secret stores (GitHub Actions secrets / GitLab CI variables) for staging credentials.
 - Do not export secrets into logs; ensure scanner commands redact env vars.
-- Enforce “no PII/secrets” in generated reports by default; store raw request/response bodies only when explicitly enabled and scrubbed. OWASP Top 10:2025 explicitly calls out logging sensitive information as a risk.
+- Enforce “no PII/secrets” in generated reports by default; store raw request/response bodies only when explicitly enabled and scrubbed. OWASP Top 10 (2021, or current version at time of implementation) explicitly calls out logging sensitive information as a risk.
 
 ---
 
@@ -272,6 +276,9 @@ jobs:
         with:
           # Needed so Gitleaks can inspect full history, not only the latest commit.
           fetch-depth: 0
+      # NOTE: gitleaks/gitleaks-action@v2 requires a paid license key for
+      # private repos (free for public repos only). As a free alternative,
+      # run `gitleaks detect` directly via the CLI (see GitLab example).
       - name: Gitleaks (history + workspace)
         uses: gitleaks/gitleaks-action@v2
         with:
@@ -294,6 +301,9 @@ jobs:
           syft dir:. -o cyclonedx-json=sbom.cdx.json
           syft dir:. -o spdx-json=sbom.spdx.json
 
+      # NOTE: The binary download approach is fragile (URL may change between
+      # releases). Consider using the official Docker image as an alternative:
+      #   docker run --rm -v "$(pwd):/data" cyclonedx/cyclonedx-cli validate --input-file /data/sbom.cdx.json
       - name: Validate CycloneDX SBOM
         run: |
           curl -sSfL https://github.com/CycloneDX/cyclonedx-cli/releases/latest/download/cyclonedx-linux-x64 -o cyclonedx
@@ -313,6 +323,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # NOTE: Pin to a specific release tag (e.g., @v2.0.0) in production CI
+      # rather than floating on @v2.
       - name: OSV-Scanner (lockfiles)
         uses: google/osv-scanner-action@v2
         with:
@@ -341,6 +353,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # NOTE: --config auto uses Semgrep Registry rules which require a (free)
+      # Semgrep account for CI and may have commercial licensing restrictions.
+      # Consider Opengrep as an OSS fork alternative for fully open-source usage.
+      # NOTE: Configure exit code handling per scanner (e.g., --error for Semgrep,
+      # --exit-code for Trivy/Grype) to control pipeline pass/fail behavior.
       - name: Semgrep CE (JSON + SARIF)
         run: |
           python -m pip install --upgrade pip
@@ -364,6 +381,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # NOTE: The `curl | sh` install pattern is risky. In production CI,
+      # verify checksums after download or use the official Trivy Docker image:
+      #   docker run --rm -v "$(pwd):/src" aquasec/trivy config --format json -o /src/trivy_config.json /src
       - name: Trivy misconfiguration scan (IaC)
         run: |
           curl -sSfL https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/install.sh | sh -s -- -b /usr/local/bin
@@ -392,6 +412,8 @@ jobs:
             exit 0
           fi
           # Enforce allowlist in your own wrapper script before running.
+          # NOTE: In production CI, pin ghcr.io/zaproxy/zaproxy to a specific
+          # image digest rather than using :stable to ensure reproducibility.
           docker run --rm -t ghcr.io/zaproxy/zaproxy:stable zap-baseline.py \
             -t "$TARGET" \
             -J zap.json \
@@ -469,6 +491,7 @@ variables:
 
 preflight:
   stage: preflight
+  # NOTE: Pin to a specific digest or update version at implementation time.
   image: alpine:3.20
   script:
     - apk add --no-cache bash git
@@ -491,6 +514,7 @@ secrets_scan:
 
 sbom:
   stage: scan
+  # NOTE: Pin to a specific digest or update version at implementation time.
   image: alpine:3.20
   script:
     - apk add --no-cache curl
@@ -505,11 +529,15 @@ sbom:
 
 sca:
   stage: scan
+  # NOTE: Pin to a specific digest or update version at implementation time.
   image: alpine:3.20
   script:
     - apk add --no-cache curl
     - curl -sSfL https://github.com/google/osv-scanner/releases/latest/download/osv-scanner_linux_amd64 -o /usr/local/bin/osv-scanner
     - chmod +x /usr/local/bin/osv-scanner
+    # NOTE: osv-scanner may exit non-zero when vulnerabilities are found.
+    # Add `|| true` or use `allow_failure: true` for optional scan steps
+    # where the gate job handles pass/fail decisions.
     - osv-scanner scan --format=json --output="$GUARDRAIL_ARTIFACTS/osv.json" .
   artifacts:
     when: always
@@ -518,9 +546,14 @@ sca:
 
 sast_semgrep:
   stage: scan
+  # NOTE: Pin python:3.12-alpine to a specific digest or update version at
+  # implementation time for reproducibility.
   image: python:3.12-alpine
   script:
     - pip install semgrep
+    # NOTE: --config auto uses Semgrep Registry rules (see licensing caveat above).
+    # Consider Opengrep as an OSS fork alternative.
+    # Configure exit code handling (e.g., --error flag) per pipeline requirements.
     - semgrep scan --config auto --json-output "$GUARDRAIL_ARTIFACTS/semgrep.json" .
   artifacts:
     when: always
@@ -529,6 +562,7 @@ sast_semgrep:
 
 build_candidate:
   stage: build
+  # NOTE: Pin to a specific digest or update version at implementation time.
   image: alpine:3.20
   script:
     - mkdir -p "$GUARDRAIL_ARTIFACTS"
@@ -540,6 +574,8 @@ build_candidate:
 
 dast_zap:
   stage: dast
+  # NOTE: Pin docker:27 and docker:27-dind to specific digests or update
+  # version at implementation time for reproducibility.
   image: docker:27
   services:
     - docker:27-dind
@@ -549,6 +585,7 @@ dast_zap:
         echo "No staging target set; skipping DAST."
         exit 0
       fi
+    # NOTE: In production CI, pin ghcr.io/zaproxy/zaproxy to a specific image digest.
     - docker run --rm -t ghcr.io/zaproxy/zaproxy:stable zap-baseline.py -t "$STAGING_BASE_URL" -J "$GUARDRAIL_ARTIFACTS/zap.json" -r "$GUARDRAIL_ARTIFACTS/zap.html" || true
   artifacts:
     when: always
@@ -558,6 +595,7 @@ dast_zap:
 
 report:
   stage: report
+  # NOTE: Pin to a specific digest or update version at implementation time.
   image: alpine:3.20
   script:
     - echo "# Guardrail Findings Report" > "$GUARDRAIL_ARTIFACTS/report.md"
@@ -570,14 +608,19 @@ report:
 
 gate:
   stage: gate
+  # NOTE: Pin to a specific digest or update version at implementation time.
   image: alpine:3.20
   script:
     - echo "Placeholder gate: parse findings and fail on unresolved critical/high issues."
 
 attest_cosign_keyless:
   stage: attest
+  # NOTE: Pin golang:1.22-alpine to a specific digest or update version at
+  # implementation time for reproducibility.
   image: golang:1.22-alpine
   script:
+    # NOTE: Pin cosign to a specific version (e.g., cosign=2.2.4-r0) rather
+    # than using the default package version for reproducible builds.
     - apk add --no-cache cosign
     - echo "Optional: keyless sign container image with cosign (requires registry + OIDC settings)."
     - echo "See GitLab docs for Sigstore keyless signing examples."
@@ -600,12 +643,12 @@ Minimum deliverables per run:
 - `sbom.cdx.json` (CycloneDX) and `sbom.spdx.json` (SPDX)
 - `findings.json` (canonical unified schema)
 - `findings.yaml` (same content, human-greppable)
-- `report.md` (client deliverable mapped to OWASP Top 10:2025 + ASVS + SSDF)
+- `report.md` (client deliverable mapped to OWASP Top 10 (2021, or current version at time of implementation) + ASVS + SSDF)
 - Tool-native raw outputs (Semgrep JSON/SARIF, ZAP JSON/HTML, OSV JSON, etc.)
 - `provenance/` directory (when enabled): SLSA provenance / signing bundles
 
 Optional integration outputs:
-- `findings.sarif` for uploading to code scanning systems (SARIF is a standard format used for static analysis results interchange).
+- `findings.sarif` for uploading to code scanning systems (SARIF is a standard format used for static analysis results interchange). SARIF files can be uploaded to GitHub Advanced Security (Code Scanning) via the `github/codeql-action/upload-sarif@v3` action where available (requires GitHub Advanced Security for private repos).
 
 ### Sample unified report schema (JSON)
 
@@ -644,7 +687,7 @@ Optional integration outputs:
       "test_type": "SAST",
       "taxonomy": {
         "cwe": ["CWE-89"],
-        "owasp_top10_2025": ["A05:2025 - Injection"]
+        "owasp_top10": ["A03:2021 - Injection"]
       },
       "standards_mapping": {
         "asvs": ["V5.* (example)"],
@@ -689,7 +732,7 @@ findings:
     guardrail_refs: ["B4"]
     test_type: SCA
     taxonomy:
-      owasp_top10_2025: ["A03:2025 - Software Supply Chain Failures"]
+      owasp_top10: ["A06:2021 - Vulnerable and Outdated Components"]
 summary:
   pipeline_status: failed
   counts_by_severity:
@@ -712,7 +755,7 @@ Use this structure in `report.md` so it reads like an assessment deliverable:
 
 ## Executive summary
 - Overall result:
-- Key risks aligned to OWASP Top 10:2025:
+- Key risks aligned to OWASP Top 10 (2021, or current version at time of implementation):
 - Release readiness (pass/fail gates):
 
 ## Findings by guardrail category
@@ -734,7 +777,7 @@ Use this structure in `report.md` so it reads like an assessment deliverable:
 - Findings:
 
 ## Standards mapping
-- OWASP Top 10:2025 mapping
+- OWASP Top 10 (2021, or current version at time of implementation) mapping
 - ASVS mapping (reference)
 - NIST SSDF mapping (reference)
 
@@ -749,8 +792,10 @@ Use this structure in `report.md` so it reads like an assessment deliverable:
 - Exceptions / risk acceptances
 ```
 
+**Vietnamese-language reporting:** For local market clients, Vietnamese-language report templates should be developed alongside the English templates. At minimum, the executive summary, findings descriptions, and remediation guidance sections should have Vietnamese translations to ensure accessibility for development teams where English proficiency varies.
+
 Standards references for mapping sections:
-- OWASP Top 10:2025 category list.
+- OWASP Top 10 (2021, or current version at time of implementation) category list.
 - ASVS provides a basis for testing security controls and secure development requirements.
 - SSDF provides a core set of secure software development practices.
 
@@ -836,6 +881,7 @@ Practical snippet for clients:
 
 **Phase: Multi-runtime hardening — ~10–15 person-days**
 - Better stack detection for Node/Python/Java/.NET.
+- **Priority: Add PHP support** (Composer lockfile detection, PHP-specific Semgrep rulesets, SBOM via Syft) — PHP is the most common web stack in Vietnam (WordPress, Laravel).
 - Add OWASP Dependency-Check for Java-heavy clients.
 - Add Hadolint + Kubernetes linting (kube-linter).
 
@@ -862,9 +908,14 @@ Practical snippet for clients:
 **Decree 53 (cybersecurity law guidance / data localization & retention context).**
 - Decree **53/2022/ND-CP** took effect **October 1, 2022** and is commonly described as elaborating Cybersecurity Law data retention/localization requirements for certain service providers in Vietnam.
 
+**Artifact storage location considerations (regulated sectors).**
+- For clients in regulated sectors (finance, healthcare, government), scan artifacts, SBOMs, and assessment reports may need to be stored within Vietnam or in approved jurisdictions to comply with Decree 53 data localization requirements.
+- Recommend self-hosted CI runners and artifact storage for regulated clients rather than SaaS platforms with offshore data centers.
+- Document artifact storage locations in the assessment report for audit trail purposes.
+
 **Data handling rules for SBOMs and reports (recommended defaults)**
 - SBOMs should not contain PII, but can contain **internal component names, repo URLs, paths**, and build metadata; treat them as sensitive business information. CycloneDX/SPDX are designed to represent component metadata and relationships; do not enrich them with user data.
-- Do not embed request/response bodies in reports unless scrubbed; OWASP Top 10:2025 explicitly warns about logging sensitive info (PII/PHI) and exposing data via logging/alerting failures.
+- Do not embed request/response bodies in reports unless scrubbed; OWASP Top 10 (2021, or current version at time of implementation) explicitly warns about logging sensitive info (PII/PHI) and exposing data via logging/alerting failures.
 - If you use SaaS CI platforms hosted outside Vietnam, minimize risk by ensuring reports contain **no hardcoded PII** and by stripping secrets; if a client is in a regulated sector, recommend storing artifacts in a controlled location and applying retention limits.
 
 **Deliverable packaging suggestion (for consulting)**
@@ -874,7 +925,7 @@ Practical snippet for clients:
 **Prioritized sources (start here when implementing)**
 - NIST SSDF SP 800-218.  
 - OWASP ASVS (v5.0.0 reference).  
-- OWASP Top 10:2025.  
+- OWASP Top 10 (2021, or current version at time of implementation).  
 - OWASP WSTG.  
 - SLSA spec (levels + provenance).  
 - CycloneDX specification + CLI.  
